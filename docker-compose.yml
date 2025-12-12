@@ -24,10 +24,11 @@ services:
   pgadmin:
     image: dpage/pgadmin4:latest
     container_name: um_api_pgadmin
-    environment:
-      # Please change these to secure values in production.
-      PGADMIN_DEFAULT_EMAIL: ristep@example.com
-      PGADMIN_DEFAULT_PASSWORD: PgAdminPass!2025
+      environment:
+        # Read pgAdmin credentials from environment variables (set in .env)
+        # Use .env to change these values or rely on defaults below
+        PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-ristep@example.com}
+        PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-PgAdminPass!2025}
     ports:
       - "5050:80"
     depends_on:
