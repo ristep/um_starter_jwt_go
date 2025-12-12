@@ -25,17 +25,23 @@ services:
     image: dpage/pgadmin4:latest
     container_name: um_api_pgadmin
     environment:
-      PGADMIN_DEFAULT_EMAIL: admin@example.com
-      PGADMIN_DEFAULT_PASSWORD: admin
+      # Please change these to secure values in production.
+      PGADMIN_DEFAULT_EMAIL: ristep@example.com
+      PGADMIN_DEFAULT_PASSWORD: PgAdminPass!2025
     ports:
       - "5050:80"
     depends_on:
       - postgres
+    volumes:
+      - ./docker/pgadmin/servers.json:/pgadmin4/servers.json:ro
+      - pgadmin_data:/var/lib/pgadmin
     networks:
       - um_api_network
 
 volumes:
   postgres_data:
+    driver: local
+  pgadmin_data:
     driver: local
 
 networks:

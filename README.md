@@ -100,6 +100,49 @@ go run cmd/api/main.go
 
 The server will start on `http://localhost:8080`
 
+### Optional: pgAdmin
+
+You can run pgAdmin as a Docker container (this repository's `docker-compose.yml` includes a `pgadmin` service):
+
+1. Start the containers:
+
+```bash
+docker-compose up -d
+```
+
+2. Visit pgAdmin:
+
+  - URL: `http://localhost:5050`
+  - **Default pgAdmin credentials (from docker-compose)**:
+    - Email: `ristep@example.com`
+    - Password: `PgAdminPass!2025`
+
+3. Add a Server to pgAdmin (recommended):
+
+  - General:
+    - Name: `um_api_postgres` (or any friendly name)
+  - Connection:
+    - Host name/address: `postgres` (if pgAdmin is running in Docker)
+      or `localhost` (if pgAdmin runs on your host)
+    - Port: `5432`
+    - Username: `postgres`
+    - Password: `postgres`
+    - Maintenance DB: `postgres` or `um_api_db`
+    - Save password: ✓
+
+4. Pre-configured servers file
+
+  - A sample `servers.json` is included at `docker/pgadmin/servers.json`. This is mounted into the container at `/pgadmin4/servers.json`, so pgAdmin will show the `um_api_postgres` server by default.
+  - If you change the postgres service name in `docker-compose.yml`, be sure to update `docker/pgadmin/servers.json` as well.
+
+5. Restart to pick up changes and server config:
+
+```bash
+docker-compose down && docker-compose up -d
+```
+
+> Note: The `pgadmin` service mounts `pgadmin_data` for persistent pgAdmin storage, so your configured servers will persist between container restarts.
+
 ## API Endpoints
 
 ### Health Check
