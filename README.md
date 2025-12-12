@@ -143,6 +143,8 @@ docker-compose down && docker-compose up -d
 
 > Note: The `pgadmin` service mounts `pgadmin_data` for persistent pgAdmin storage, so your configured servers will persist between container restarts.
 
+  > Security note: For security reasons, the preconfigured `servers.json` does not include the database password; you should enter the DB password in the pgAdmin UI. Avoid committing actual credentials to version control. Add any personal secret values to your local `.env` and keep it out of the repo.
+
 ## API Endpoints
 
 ### Health Check

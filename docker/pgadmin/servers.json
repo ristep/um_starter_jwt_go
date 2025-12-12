@@ -6,7 +6,7 @@
       "Host": "postgres",
       "Port": 5432,
       "Username": "postgres",
-      "Password": "postgres",
+      "Password": null,
       "DBName": "um_api_db",
       "SSLMode": "disable",
       "MaintenanceDB": "postgres"
