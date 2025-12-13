@@ -33,6 +33,7 @@ type RegisterRequest struct {
 	Name     string `json:"name" binding:"required,min=2"`
 	Tel      string `json:"tel"`
 	Age      int    `json:"age"`
+	Gender   string `json:"gender"`
 	Address  string `json:"address"`
 	City     string `json:"city"`
 	Country  string `json:"country"`
@@ -100,6 +101,7 @@ func (ah *AuthHandler) RegisterHandler(c *gin.Context) {
 		Name:     req.Name,
 		Tel:      req.Tel,
 		Age:      req.Age,
+		Gender:   req.Gender,
 		Address:  req.Address,
 		City:     req.City,
 		Country:  req.Country,
@@ -278,6 +280,7 @@ type UpdateUserRequest struct {
 	Address string `json:"address"`
 	City    string `json:"city"`
 	Country string `json:"country"`
+	Gender  string `json:"gender"`
 }
 
 // UpdateUserHandler updates a user (user can update self, admin can update anyone)
@@ -343,6 +346,12 @@ func (uh *UserHandler) UpdateUserHandler(c *gin.Context) {
 	}
 	if req.Country != "" {
 		user.Country = req.Country
+	}
+	if req.Gender != "" {
+		user.Gender = req.Gender
+	}
+	if req.Tel != "" {
+		user.Tel = req.Tel
 	}
 
 	if err := uh.db.Save(&user).Error; err != nil {

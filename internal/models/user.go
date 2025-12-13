@@ -13,6 +13,7 @@ type User struct {
 	Address       string         `json:"address"`
 	City          string         `json:"city"`
 	Country       string         `json:"country"`
+	Gender        string         `json:"gender"`
 	EmailVerified bool           `gorm:"default:false" json:"email_verified"`
 	Roles         []Role         `gorm:"many2many:user_roles;" json:"roles"`
 	CreatedAt     int64          `gorm:"autoCreateTime:milli" json:"created_at"`
