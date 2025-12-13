@@ -1,15 +1,15 @@
 {
-  "Servers": {
-    "1": {
-      "Name": "um_api_postgres",
-      "Group": "Servers",
-      "Host": "postgres",
-      "Port": 5432,
-      "Username": "postgres",
-      "Password": null,
-      "DBName": "um_api_db",
-      "SSLMode": "disable",
-      "MaintenanceDB": "postgres"
+    "Servers": {
+        "1": {
+            "Name": "um_api_postgres",
+            "Group": "Servers",
+            "Host": "postgres",
+            "Port": 5432,
+            "Username": "postgres",
+            "Password": "postgres",
+            "DBName": "um_api_db",
+            "SSLMode": "prefer",
+            "MaintenanceDB": "postgres"
+        }
     }
-  }
 }

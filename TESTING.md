@@ -27,7 +27,7 @@ Expected response:
 curl -X POST http://localhost:8080/api/auth/register \
   -H "Content-Type: application/json" \
   -d '{
-    "email": "john.doe@example.com",
+    "email": "mano.bano@example.com",
     "password": "SecurePassword123",
     "name": "John Doe"
   }'
