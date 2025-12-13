@@ -302,7 +302,7 @@ Plus 28 indirect dependencies (all managed by go mod)
 
 ## Module Naming Note
 
-The project uses `github.com/yourusername/um_starter_jwt_go` as the module name. 
+The project uses `github.com/ristep/um_starter_jwt_go` as the module name. 
 To use in production, replace `yourusername` with your actual GitHub username or organization:
 
 ```bash

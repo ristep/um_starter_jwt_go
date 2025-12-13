@@ -7,8 +7,8 @@ import (
 	"github.com/gin-gonic/gin"
 	"gorm.io/gorm"
 
-	"github.com/yourusername/um_starter_jwt_go/internal/auth"
-	"github.com/yourusername/um_starter_jwt_go/internal/models"
+	"github.com/ristep/um_starter_jwt_go/internal/auth"
+	"github.com/ristep/um_starter_jwt_go/internal/models"
 )
 
 // AuthMiddleware validates JWT tokens and attaches user claims to the request context

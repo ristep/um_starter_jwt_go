@@ -10,10 +10,10 @@ import (
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 
-	"github.com/yourusername/um_starter_jwt_go/internal/auth"
-	"github.com/yourusername/um_starter_jwt_go/internal/handlers"
-	"github.com/yourusername/um_starter_jwt_go/internal/middleware"
-	"github.com/yourusername/um_starter_jwt_go/internal/models"
+	"github.com/ristep/um_starter_jwt_go/internal/auth"
+	"github.com/ristep/um_starter_jwt_go/internal/handlers"
+	"github.com/ristep/um_starter_jwt_go/internal/middleware"
+	"github.com/ristep/um_starter_jwt_go/internal/models"
 )
 
 func main() {

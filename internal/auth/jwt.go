@@ -6,7 +6,7 @@ import (
 	"time"
 
 	"github.com/golang-jwt/jwt/v5"
-	"github.com/yourusername/um_starter_jwt_go/internal/models"
+	"github.com/ristep/um_starter_jwt_go/internal/models"
 )
 
 // CustomClaims represents the custom claims in the JWT token

@@ -8,8 +8,8 @@ import (
 	"golang.org/x/crypto/bcrypt"
 	"gorm.io/gorm"
 
-	"github.com/yourusername/um_starter_jwt_go/internal/auth"
-	"github.com/yourusername/um_starter_jwt_go/internal/models"
+	"github.com/ristep/um_starter_jwt_go/internal/auth"
+	"github.com/ristep/um_starter_jwt_go/internal/models"
 )
 
 // AuthHandler handles authentication-related HTTP requests
