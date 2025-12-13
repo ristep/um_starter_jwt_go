@@ -29,7 +29,12 @@ curl -X POST http://localhost:8080/api/auth/register \
   -d '{
     "email": "mano.bano@example.com",
     "password": "SecurePassword123",
-    "name": "John Doe"
+    "name": "John Doe",
+    "tel": "+1234567890",
+    "age": 30,
+    "address": "123 Main St",
+    "city": "Metropolis",
+    "country": "Utopia"
   }'
 ```
 
@@ -43,6 +48,14 @@ Expected response (201 Created):
       "id": 1,
       "email": "john.doe@example.com",
       "name": "John Doe",
+      "email": "john.doe@example.com",
+      "name": "John Doe",
+      "tel": "+1234567890",
+      "age": 30,
+      "address": "123 Main St",
+      "city": "Metropolis",
+      "country": "Utopia",
+      "email_verified": false,
       "roles": [
         {
           "id": 1,
@@ -204,7 +217,9 @@ curl -X PUT http://localhost:8080/api/users/1 \
   -H "Authorization: Bearer ADMIN_ACCESS_TOKEN" \
   -H "Content-Type: application/json" \
   -d '{
-    "name": "John Smith"
+    "name": "John Smith",
+    "tel": "+1987654321",
+    "city": "Gotham"
   }'
 ```
 

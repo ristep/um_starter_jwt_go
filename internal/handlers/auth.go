@@ -31,6 +31,11 @@ type RegisterRequest struct {
 	Email    string `json:"email" binding:"required,email"`
 	Password string `json:"password" binding:"required,min=8"`
 	Name     string `json:"name" binding:"required,min=2"`
+	Tel      string `json:"tel"`
+	Age      int    `json:"age"`
+	Address  string `json:"address"`
+	City     string `json:"city"`
+	Country  string `json:"country"`
 }
 
 // LoginRequest represents the JSON payload for login
@@ -93,6 +98,11 @@ func (ah *AuthHandler) RegisterHandler(c *gin.Context) {
 		Email:    req.Email,
 		Password: string(hashedPassword),
 		Name:     req.Name,
+		Tel:      req.Tel,
+		Age:      req.Age,
+		Address:  req.Address,
+		City:     req.City,
+		Country:  req.Country,
 		Roles:    []models.Role{userRole},
 	}
 
@@ -262,7 +272,12 @@ func (uh *UserHandler) GetUserByIDHandler(c *gin.Context) {
 
 // UpdateUserRequest represents the JSON payload for user updates
 type UpdateUserRequest struct {
-	Name string `json:"name" binding:"omitempty,min=2"`
+	Name    string `json:"name" binding:"omitempty,min=2"`
+	Tel     string `json:"tel"`
+	Age     int    `json:"age"`
+	Address string `json:"address"`
+	City    string `json:"city"`
+	Country string `json:"country"`
 }
 
 // UpdateUserHandler updates a user (user can update self, admin can update anyone)
@@ -313,6 +328,21 @@ func (uh *UserHandler) UpdateUserHandler(c *gin.Context) {
 	// Update fields
 	if req.Name != "" {
 		user.Name = req.Name
+	}
+	if req.Tel != "" {
+		user.Tel = req.Tel
+	}
+	if req.Age != 0 {
+		user.Age = req.Age
+	}
+	if req.Address != "" {
+		user.Address = req.Address
+	}
+	if req.City != "" {
+		user.City = req.City
+	}
+	if req.Country != "" {
+		user.Country = req.Country
 	}
 
 	if err := uh.db.Save(&user).Error; err != nil {

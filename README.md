@@ -114,16 +114,16 @@ docker-compose up -d
 
   - URL: `http://localhost:5050`
   - **Default pgAdmin credentials (from docker-compose)**:
-    - Email: `ristep@example.com`
-    - Password: `PgAdminPass!2025`
+    - Email: `ristep@gmail.com`
+    - Password: `Leprakon!2025`
 
 3. Add a Server to pgAdmin (recommended):
 
   - General:
     - Name: `um_api_postgres` (or any friendly name)
   - Connection:
-    - Host name/address: `postgres` (if pgAdmin is running in Docker)
-      or `localhost` (if pgAdmin runs on your host)
+    - Host name/address: `postgres` (Required when running in Docker)
+      (Do NOT use `localhost` inside Docker network)
     - Port: `5432`
     - Username: `postgres`
     - Password: `postgres`
